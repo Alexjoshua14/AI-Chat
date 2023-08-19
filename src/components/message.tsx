@@ -19,7 +19,7 @@ export const Message = ({ msg, className, ...props }: { msg: Message, className?
   return (
     <div className={`grid grid-cols-msg grid-rows-msg gap-2 center ${className}`} {...props}>
       <div className={`w-5 h-5 rounded-full bg-${msg.user.color}-500 glassmorphism`} />
-      <h2 className="text-secondary">
+      <h2 className="text-secondary font-extralight text-xs">
         {msg.user.username}
       </h2>
 
