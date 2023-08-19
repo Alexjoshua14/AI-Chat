@@ -2,9 +2,7 @@
 
 'use client'
 
-import { useEffect, useRef } from "react"
-import { Message } from "./message"
-import { messages } from "@/data/placeholder"
+import { useRef } from "react"
 import { useAutoScrollBottom } from "@/hooks/useAutoScrollBottom"
 
 /**
@@ -12,7 +10,7 @@ import { useAutoScrollBottom } from "@/hooks/useAutoScrollBottom"
  * 
  * @returns 
  */
-export const Chat = ({ className, ...props }: { className?: String }) => {
+export const Chat = ({ children, className, ...props }: { children: React.ReactNode, className?: String }) => {
   // Set scroll to bottom
   const chatContainerRef = useRef<HTMLDivElement>(null);
   useAutoScrollBottom(chatContainerRef);
@@ -22,10 +20,8 @@ export const Chat = ({ className, ...props }: { className?: String }) => {
   // Get chat messages
 
   return (
-    <div ref={chatContainerRef} className={`h-full w-full px-4 overflow-auto flex flex-col gap-4 scroll-smooth ${className}`} {...props}>
-      {messages.map((message) => (
-        <Message key={message.id} msg={message} />
-      ))}
+    <div ref={chatContainerRef} className={`h-full w-full px-4 overflow-auto flex flex-col justify-end gap-4 scroll-smooth ${className}`} {...props}>
+      {children}
     </div>
   )
 }
