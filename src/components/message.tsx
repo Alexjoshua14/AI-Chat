@@ -1,3 +1,4 @@
+/* Alex Joshua (c) 2023 */
 
 type User = {
   id: string

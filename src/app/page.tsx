@@ -1,3 +1,5 @@
+/* Alex Joshua (c) 2023 */
+
 import { InputBar } from '@/components/inputBar/inputBar'
 import { Chat } from '@/components/chat'
 import { Settings } from '@/components/settings'

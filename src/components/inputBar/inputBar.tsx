@@ -1,3 +1,5 @@
+/* Alex Joshua (c) 2023 */
+
 'use client'
 
 export const InputBar = () => {

@@ -1,3 +1,5 @@
+/* Alex Joshua (c) 2023 */
+
 import type { Config } from 'tailwindcss'
 
 const colors = require('tailwindcss/colors')

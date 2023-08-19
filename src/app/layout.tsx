@@ -1,3 +1,5 @@
+/* Alex Joshua (c) 2023 */
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'

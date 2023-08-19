@@ -1,3 +1,4 @@
+/* Alex Joshua (c) 2023 */
 
 import { RefObject, useEffect } from 'react';
 
