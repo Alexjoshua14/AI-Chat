@@ -1,0 +1,3 @@
+.inputWrapper:focus-within {
+  @apply ring-2 ring-teal-500;
+}
