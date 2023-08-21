@@ -7,6 +7,7 @@ import { FormEvent, useState } from "react"
 import { sendMessage } from "@/lib/message"
 
 import { RiVoiceprintLine } from 'react-icons/ri'
+import { IoSendOutline } from 'react-icons/io5'
 import styles from './inputBar.module.css'
 
 export const InputBar = () => {
@@ -17,9 +18,12 @@ export const InputBar = () => {
     console.log(input);
 
     // Clean message of malicious code
+    if (input.length === 0) return;
 
     // Send message to server
-    sendMessage(input);
+    const response = sendMessage(input, 1);
+    console.log("Response: ", response);
+    console.log("Message received: ", response.then((res) => res && res.message));
 
     setInput('');
   }
@@ -42,7 +46,9 @@ export const InputBar = () => {
         <RiVoiceprintLine />
       </div>
       <div className="px-2">
-        <button type="submit" >Search</button>
+        <button type="submit" >
+          <IoSendOutline />
+        </button>
       </div>
     </form>
   )
