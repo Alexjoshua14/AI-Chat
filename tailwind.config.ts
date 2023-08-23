@@ -22,12 +22,15 @@ const config: Config = {
         'primary': colors.slate[200],
         'secondary': colors.slate[400],
         'tertiary': colors.slate[500],
+        'black-primary': colors.slate[950],
+        'black-secondary': colors.slate[800],
+        'black-tertiary': colors.slate[700]
       },
       backgroundColor: {
         'primary': colors.gray[950],
         'secondary': colors.gray[800],
         'tertiary': colors.gray[700],
-        'input': colors.gray[600],
+        'input': colors.gray[300],
       },
     },
   },

@@ -1,27 +1,23 @@
 /* Alex Joshua (c) 2023 */
 
 
-import { Message, authorBrief } from '@/types';
+import { authorBrief } from '@/types';
+import { Message } from '@/lib/validators/messages'
+import { User } from '@/lib/validators/user';
 
-export const mapToMessage = (message: any, user: any) => {
+export const mapToMessage = (message: Message, user: User) => {
   if (user.id != message.authorId) {
     const errr: Message = {
-      id: '', content: 'Error', timestamp: new Date(), authorId: '', author: { id: '', username: 'Error', color: 'red' } 
+      id: -1, authorId: -1, content: 'Error', timestamp: new Date(), isUserMessage: false
     };
-  }
-
-  const authorBrief: authorBrief = {
-    id: user.id,
-    username: user.name,
-    color: "yellow"
   }
 
   const msg: Message = {
     id: message.id,
+    authorId: message.authorId,
     content: message.content,
     timestamp: message.timestamp,
-    authorId: message.authorId,
-    author: authorBrief,
+    isUserMessage: message.isUserMessage
   }
 
   return msg;

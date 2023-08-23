@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-primary bg-primary;
+  @apply text-primary bg-gradient-to-tl from-teal-800 to-teal-500;
 }
 
 .glassmorphism {

@@ -1,23 +1,25 @@
 /* Alex Joshua (c) 2023 */
 
-import { InputBar } from '@/components/inputBar/inputBar'
-import { Chat } from '@/components/chat'
-import { Settings } from '@/components/settings'
-import { messages } from '@/data/placeholder'
-import { Message } from '@/components/message'
+import { useCallback, useEffect, useState } from "react"
+import { InputBar } from '@/components/InputBar'
+import { Settings } from '@/components/Settings'
+import { Chat } from '@/components/Chat'
+import { MessageCard } from '@/components/MessageCard'
+import { Message } from '@/types'
 
-export default function Home() {
+import { createUser, getMessages } from '@/lib/db'
+
+export default async function Home() {
+  const user = null; // Use logged in user or prompt to create new user
+  const id = 1;
+  let messages = await getMessages(id);
+
+  console.log(messages);
 
   return (
-    <main className="relative flex h-screen flex-col items-center justify-end">
+    <main className="h-screen relative flex flex-col items-center justify-end">
       <Settings />
-      <Chat className="pt-8 pb-20">
-        <>
-          {messages.map((message) => (
-            <Message key={message.id} msg={message} />
-          ))}
-        </>
-      </Chat>
+      <Chat className="pt-8 pb-20" />
       <InputBar />
     </main>
   )
